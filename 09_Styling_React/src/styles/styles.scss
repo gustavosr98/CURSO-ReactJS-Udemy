@@ -1,0 +1,6 @@
+@import './base/base'; //SE PUEDE PONER SIN EL _ Y SIN EL SCSS
+
+$brand-color: red;
+* {
+    color: $brand-color;
+}
