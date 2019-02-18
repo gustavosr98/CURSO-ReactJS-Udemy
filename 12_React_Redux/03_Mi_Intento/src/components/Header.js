@@ -7,7 +7,7 @@ export default () => (
         <header>
             <NavLink to="/" activeClassName="is-active" exact={true}>Dashboard</NavLink>
             <span> - </span>
-            <NavLink to="/edit" activeClassName="is-active">Create Expense</NavLink>
+            <NavLink to="/createExpense" activeClassName="is-active">Create Expense</NavLink>
             <span> - </span>
             <NavLink to="/help" activeClassName="is-active">Help</NavLink>
         </header>

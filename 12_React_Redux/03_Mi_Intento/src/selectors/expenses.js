@@ -1,4 +1,5 @@
-// Get visible expenses
+// GET VISIBLE EXPENSES
+// RETORNA UN ARRAY CON LOS EXPENSES FILTRADOS POR LA BUSQUEDA
 
 export default (expenses, { text, sortBy, startDate, endDate }) => {
   return expenses.filter((expense) => {

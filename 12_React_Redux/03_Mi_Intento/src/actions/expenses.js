@@ -1,3 +1,6 @@
+// GENERADORES DE ACCIONES
+// RETORNAN UN OBJETO DE TIPO ACCION
+
 import uuid from 'uuid';
 
 // ADD_EXPENSE
@@ -8,7 +11,7 @@ export const addExpense = (
         amount = 0,
         createdAt = 0
     } = {}
-) => ({
+) => ({ // EN LOS OBJETOS ACCION, TYPE ES OBLIGATORIO
     type: 'ADD_EXPENSE',
     expense: {
         id: uuid(),

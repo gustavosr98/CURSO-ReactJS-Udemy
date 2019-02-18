@@ -8,6 +8,8 @@ const BuscadorExpenses = (props) => (
             type="text"
             value={props.filters.text}
             onChange={ (e) => {
+                // CON CONNECT, PROPS SE CONVIERTE EN STORE
+                // STORE.DISPATCH( ACTION ) ENVIA LA ACCION AL REDUCER
                 props.dispatch( setTextFilter (e.target.value ))
             }}
         />
@@ -32,4 +34,6 @@ const mapStateToProps = (state) => ({
     filters: state.filters
 })
 
+// CONNECT( FUNCION => STATE )( COMPONENTE )
+// TRANSFORMA EL STATE EN PROPS PARA EL COMPONENTE
 export default connect(mapStateToProps)(BuscadorExpenses)

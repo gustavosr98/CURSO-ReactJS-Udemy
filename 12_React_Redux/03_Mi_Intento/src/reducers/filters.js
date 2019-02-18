@@ -1,4 +1,6 @@
-// Filters Reducer
+// FILTERS REDUCER
+// ENCARGADO DE LA MANERA DE COMO SE MANEJAN LAS ACCIONES
+
 
 const defaultState = {
     text: "",

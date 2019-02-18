@@ -1,4 +1,5 @@
-// Expenses Reducer
+// EXPENSE REDUCER
+// ENCARGADO DE LA MANERA DE COMO SE MANEJAN LAS ACCIONES
 
 const defaultState = []
 
