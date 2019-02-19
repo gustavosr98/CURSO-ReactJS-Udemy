@@ -2,6 +2,7 @@ import expensesReducer from '../../reducers/expenses';
 import expenses from '../fixtures/expenses';
 
 test('should set default state', () => {
+  // @@INIT ES LA ACCION QUE SE EJECUTA AL CONSTRUIRSE UN REDUCER
   const state = expensesReducer(undefined, { type: '@@INIT' });
   expect(state).toEqual([]);
 });
@@ -11,6 +12,8 @@ test('should remove expense by id', () => {
     type: 'REMOVE_EXPENSE',
     id: expenses[1].id
   };
+
+  //RECORDAR QUE UN REDUCER ES UNA FUNCION Y PUEDO PROBARLA A PARTIR DE SU INPUT Y OUTPUT
   const state = expensesReducer(expenses, action);
   expect(state).toEqual([expenses[0], expenses[2]]);
 });

@@ -1,7 +1,9 @@
 import { addExpense, editExpense, removeExpense } from '../../actions/expenses';
 
+// TEST( TEXTO DESCRIPTIVO, F() )
 test('should setup remove expense action object', () => {
   const action = removeExpense({ id: '123abc' });
+  // EXPECT ( RESULTADO ) . ALGUNA_FUNCION_DE_COMPARACION( RESULTADO ESPERADO )
   expect(action).toEqual({
     type: 'REMOVE_EXPENSE',
     id: '123abc'

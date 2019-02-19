@@ -1,3 +1,5 @@
+// EN CARPETA FIXTURES/ PONGO DATA ARBITRARIA TEMPORAL PARA PRUEBAS
+
 import moment from 'moment'
 
 export default [{
