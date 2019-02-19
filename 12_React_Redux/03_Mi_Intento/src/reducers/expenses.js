@@ -12,9 +12,9 @@ export default (state = defaultState, action) => {
             return state.filter( ({ id }) => id !== action.id )
         case  'EDIT_EXPENSE' : 
             return state.map( (expense) => {
-                if (expense.id === action.expense.id)
+                if (expense.id === action.id)
                     return { 
-                        expense,
+                        id: expense.id,
                         ...action.updates
                     }
                 else 

@@ -1,21 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import moment from 'moment'
 import getVisibleExpenses from '../selectors/expenses'
-import { removeExpense } from '../actions/expenses'
 
 const ListaDeExpenses = (props) => (
     <div>    
         {getVisibleExpenses(props.expenses, props.filters).map( (expense) => (
             <div key={expense.id}>
-                <h3>{expense.description}</h3>
-                <p>{expense.note} - {expense.amount}$ - Date:{expense.createdAt}</p>
-                <button
-                    onClick={ () =>
-                        props.dispatch( removeExpense(expense) )
-                    }
-                >
-                    Eliminar
-                </button>
+                <Link to={`/edit/${expense.id}`}>
+                    <h3>{expense.description}</h3>
+                </Link>
+                <p>{expense.note} - {(expense.amount / 100).toString()}$ - { moment(expense.ceatedAt).format('MM/DD/YYYY') }</p>
             </div>
         ))}
     </div>

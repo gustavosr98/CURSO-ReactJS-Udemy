@@ -10,9 +10,9 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore();
-store.dispatch( addExpense( {description:'COMPRAS EN PANAMA', amount:1000, note:'Fiesta', createdAt:0} ) )
-store.dispatch( addExpense( {description:'COMPRAS EN TUCACAS', amount:300, note:'Comida', createdAt:100} ) )
-store.dispatch( addExpense( {description:'COMPRAS EN MIAMI', amount:5000, note:'Ropa', createdAt:70} ) )
+store.dispatch( addExpense( {description:'COMPRAS EN PANAMA', amount:1005, note:'Fiesta', createdAt:1000000000000} ) )
+store.dispatch( addExpense( {description:'COMPRAS EN TUCACAS', amount:307, note:'Comida', createdAt:1000500000000} ) )
+store.dispatch( addExpense( {description:'COMPRAS EN MIAMI', amount:5000, note:'Ropa', createdAt:1500000000000} ) )
 
 
 store.subscribe( ()  => {

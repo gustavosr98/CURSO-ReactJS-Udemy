@@ -5,13 +5,18 @@ import 'react-dates/lib/css/_datepicker.css'
 
 export default class ExpenseForm extends React.Component {
     // LOCAL STATE PARA SEGUIR LOS CAMBIOS ANTES DE ENVIARLOS EN SUBMIT 
-    state = {
-        description: "",
-        note: "",
-        amount: "",
-        createdAt: moment(),
-        calendarFocused : false,
-        error: ''
+    constructor (props){
+        super(props)
+
+        console.log(props)
+        this.state = {
+            description: props.expense ? props.expense.description :  "",
+            note: props.expense ? props.expense.note : "",
+            amount: props.expense ? (props.expense.amount / 100).toString() : "",
+            createdAt: props.expense ? moment( props.expense.createdAt ) : moment(),
+            calendarFocused : false,
+            error: ''
+        }
     }
 
     onDescriptionChange = (e) => {
@@ -68,9 +73,9 @@ export default class ExpenseForm extends React.Component {
                 <form onSubmit={this.onSubmit}>
                     <input 
                         type="text"
-                        placeholder="Insert descripcion"
+                        placeholder="Insert description"
                         autoFocus
-                        value={this.state.descripcion}
+                        value={this.state.description}
                         onChange={this.onDescriptionChange}
                     />
                     <input 
