@@ -20,7 +20,7 @@ export const startAddExpense = (expenseData = {}) => {
 
     const expense = { description, note, amount, createdAt };
 
-    // refArray.push( elemento ).then ( despacha la accion al redux store )
+    //  refArray.push( elemento ).then ( despacha la accion al redux store )
     database.ref('expenses').push(expense).then((ref) => {
       dispatch(addExpense({
         id: ref.key,
@@ -28,4 +28,4 @@ export const startAddExpense = (expenseData = {}) => {
       }));
     });
   };
-};
+}; 
