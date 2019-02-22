@@ -45,10 +45,11 @@ export const setExpenses = (expenses) => ({
   expenses
 });
 
-export const startSetExpenses = (render) => {
+export const startSetExpenses = () => {
   return (dispatch) => {
     return database.ref('expenses')
-      .on('value', (snapshot) => {
+      .once('value')
+      .then(  (snapshot) => {
         const expenses = []
         
         snapshot.forEach( (childSnapshot) => {
@@ -58,7 +59,6 @@ export const startSetExpenses = (render) => {
           })
         })
         dispatch( setExpenses(expenses) )
-        render() 
     })
   }
 }
